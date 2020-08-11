@@ -1,6 +1,7 @@
 package org.dxctraining.dao;
 
 import java.util.ArrayList;
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -8,7 +9,9 @@ import java.util.Map;
 
 import org.dxctraining.entities.Guest;
 import org.dxctraining.exceptions.GuestNotFoundException;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class GuestDaoImpl implements IGuestDao {
 	private Map<String, Guest> store = new HashMap<>();
 	private int generatedId = 1;

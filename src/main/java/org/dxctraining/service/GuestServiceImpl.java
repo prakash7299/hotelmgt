@@ -2,13 +2,18 @@ package org.dxctraining.service;
 
 import java.util.List;
 
+
 import org.dxctraining.dao.GuestDaoImpl;
 import org.dxctraining.dao.IGuestDao;
 import org.dxctraining.entities.Guest;
 import org.dxctraining.exceptions.InvalidArgumentException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class GuestServiceImpl implements IGuestService {
-	private IGuestDao dao = new GuestDaoImpl();
+	@Autowired
+	private IGuestDao dao;
 
 	@Override
 	public List<Guest> findAll() {
