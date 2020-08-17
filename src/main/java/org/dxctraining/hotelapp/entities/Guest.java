@@ -1,20 +1,33 @@
-package org.dxctraining.entities;
+package org.dxctraining.hotelapp.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "guests")//table name
 public class Guest {
-	private String id;
+	
+	@Id
+    @GeneratedValue
+	private int id;
 	private String name;
 	private double roomCost;
+
+    public Guest() {
+		
+	}
 
 	public Guest(String name, double roomCost) {
 		this.name = name;
 		this.roomCost = roomCost;
 	}
-
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -36,8 +49,7 @@ public class Guest {
 
 	@Override
 	public int hashCode() {
-		int hash = id.hashCode();
-		return hash;
+		return id;
 	}
 
 	@Override
@@ -51,7 +63,7 @@ public class Guest {
 		}
 
 		Guest that = (Guest) org;
-		boolean isequal = this.id.equals(that.id);
+		boolean isequal = this.id==that.id;
 		return isequal;
 	}
 

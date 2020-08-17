@@ -1,4 +1,4 @@
-package org.dxctraining.exceptions;
+package org.dxctraining.hotelapp.exceptions;
 
 public class InvalidArgumentException extends RuntimeException{
 
